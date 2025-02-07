@@ -1,4 +1,6 @@
+import "./globals.css"
 import type { Metadata } from "next"
+import { archivo } from "@/utils/fonts"
 
 export const metadata: Metadata = {
   title: "SmartMoney | Tecnologia disruptiva",
@@ -12,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
-      <body className={`antialiased`}>{children}</body>
+      <body className={`${archivo} antialiased`}>{children}</body>
     </html>
   )
 }
