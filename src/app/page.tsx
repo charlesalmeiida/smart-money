@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-      <h1>Heading - H1</h1>
+      <h1 className="text-brand">Heading - H1</h1>
       <h2>Heading - H2</h2>
       <h3>Heading - H3</h3>
       <h4>Heading - H4</h4>
