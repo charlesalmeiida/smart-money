@@ -1,12 +1,19 @@
+import { Container } from "@/components/container"
+import { TagTech } from "@/components/homepage/tag-tech"
+
 export default function Home() {
   return (
-    <>
-      <h1 className="text-brand">Heading - H1</h1>
-      <h2>Heading - H2</h2>
-      <h3>Heading - H3</h3>
-      <h4>Heading - H4</h4>
-      <h5>Heading - H5</h5>
-      <h6>Heading - H6</h6>
-    </>
+    <main>
+      <section className="pt-10">
+        <Container>
+          <div>
+            <TagTech />
+            <h3 className="text-neutral-white mt-6 font-semibold max-w-[656px]">
+              Conta digital que não é só uma conta digital.
+            </h3>
+          </div>
+        </Container>
+      </section>
+    </main>
   )
 }

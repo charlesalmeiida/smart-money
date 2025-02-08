@@ -1,4 +1,16 @@
 import { Archivo } from "next/font/google"
+import localFont from "next/font/local"
+
+const calibri_font = localFont({
+  src: [
+    {
+      path: "../fonts/Calibri.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-calibri",
+})
 
 const archivo_font = Archivo({
   subsets: ["latin"],
@@ -8,3 +20,4 @@ const archivo_font = Archivo({
 })
 
 export const archivo = archivo_font.variable
+export const calibri = calibri_font.variable

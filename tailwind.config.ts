@@ -20,6 +20,7 @@ export default {
       neutral: {
         gray01: "#F2F5FC",
         gray02: "#CBD6E2",
+        white: "#fff",
       },
       gray: {
         800: "#070514",
@@ -31,15 +32,20 @@ export default {
         200: "#413E52",
         100: "#4C4A5E",
         50: "#757385",
+        border: "#1D1B38",
       },
     },
     extend: {
       fontFamily: {
         mono: ["var(--font-archivo)"],
+        sans: ["var(--font-calibri)"],
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      maxWidth: {
+        grid: "77.5rem",
       },
     },
   },
