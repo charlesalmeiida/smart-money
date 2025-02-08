@@ -3,7 +3,6 @@
 @layer base {
   * {
     @apply font-mono;
-    background-color: #070514;
   }
 }
 
@@ -58,3 +57,4 @@ h6 {
   display: flex;
   justify-content: space-between;
 }
+

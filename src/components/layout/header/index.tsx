@@ -28,8 +28,8 @@ const navLinks = [
 
 export function Header() {
   return (
-    <header className="py-7">
-      <Container className="flex-between items-center text-neutral-gray01">
+    <header className="absolute w-full top-0 z-50">
+      <Container className="flex-between py-7  items-center text-neutral-gray01">
         <Link href={"/"}>
           <Image
             src={"/svg/logo-smartmoney.svg"}
@@ -49,7 +49,9 @@ export function Header() {
               </li>
             ))}
           </ul>
-          <Button>Cadastre-se</Button>
+          <Button size="sm" color="secondary">
+            Cadastre-se
+          </Button>
         </nav>
       </Container>
     </header>

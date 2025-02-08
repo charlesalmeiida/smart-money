@@ -7,6 +7,12 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    backgroundImage: {
+      hero: "url('/svg/bg-hero.svg')",
+    },
+    boxShadow: {
+      shape: "0px 30px 50px -10px rgba(76, 74, 94, 0.20)",
+    },
     colors: {
       primary: {
         light: "#2E7AFF",
