@@ -12,6 +12,7 @@ export default {
     },
     boxShadow: {
       shape: "0px 30px 50px -10px rgba(76, 74, 94, 0.20)",
+      card: "0px 20px 30px -10px rgba(76, 74, 94, 0.15)",
     },
     colors: {
       primary: {
@@ -52,6 +53,11 @@ export default {
       },
       maxWidth: {
         grid: "77.5rem",
+        button: "14.4375rem",
+        card: "17.375rem",
+      },
+      padding: {
+        about: "7.5rem",
       },
     },
   },

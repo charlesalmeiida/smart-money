@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants"
 
 const button = tv({
-  base: "rounded-md text-sm font-semibold leading-5 transition-all",
+  base: "rounded-md font-semibold leading-5 transition-all",
   variants: {
     color: {
       primary: "bg-primary-default text-neutral-white",
@@ -9,8 +9,9 @@ const button = tv({
         "bg-neutral-white text-gray-700 hover:bg-primary-default hover:text-neutral-white",
     },
     size: {
-      sm: "py-3 px-6",
-      lg: "py-4 w-full",
+      sm: "py-3 px-6 text-sm",
+      md: "py-4 w-full max-w-button text-base",
+      lg: "py-4 w-full text-base",
     },
   },
 })
@@ -18,7 +19,7 @@ const button = tv({
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode
   color: "primary" | "secondary"
-  size: "sm" | "lg"
+  size: "sm" | "lg" | "md"
 }
 
 export function Button({ children, color, size }: ButtonProps) {
