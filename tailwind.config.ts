@@ -57,7 +57,7 @@ export default {
         card: "17.375rem",
       },
       padding: {
-        about: "7.5rem",
+        section: "7.5rem",
       },
     },
   },

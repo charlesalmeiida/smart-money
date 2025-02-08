@@ -2,6 +2,8 @@ import { Button } from "@/components/button"
 import { Container } from "@/components/container"
 import Image from "next/image"
 import { CardImage } from "./card-image"
+import { CirclesAnimation } from "./circles-animation"
+import { ListItem } from "./list-item"
 
 const bulletsAbout = [
   {
@@ -15,9 +17,36 @@ const bulletsAbout = [
   },
 ]
 
+const listItems = [
+  {
+    image: "/svg/icon-complexidade.svg",
+    title: "Fim da complexidade",
+    description:
+      "Amet, leo turpis facilisi nam fusce nunc molestie. Orci, nibh auctor lacus eleifend tincidunt sceleris",
+  },
+  {
+    image: "/svg/icon-burocracia.svg",
+    title: "Sem burocracia",
+    description:
+      "Eu arcu arcu vitae ipsum sed. Purus volutpat laoreet sed nisi, imperdiet sit aliquam viverra.",
+  },
+  {
+    image: "/svg/icon-digital.svg",
+    title: "Tudo digital",
+    description:
+      "Dictum mi risus auctor donec et amet duis tincidunt gravida. Tellus amet, porttitor quis mauris",
+  },
+  {
+    image: "/svg/icon-evolucao.svg",
+    title: "Evolução constante",
+    description:
+      "Commodo egestas dolor, sapien nam posuere at. Ultrices dictum cras vel gravida gravida vehicula",
+  },
+]
+
 export function AboutSection() {
   return (
-    <section className="bg-neutral-white relative -mt-10 py-about">
+    <section className="bg-neutral-white relative -mt-10 py-section">
       <Container className="flex-between items-start">
         <div>
           <div className="space-y-12">
@@ -33,8 +62,8 @@ export function AboutSection() {
                 </p>
               </div>
               <ul className="space-y-6">
-                {bulletsAbout.map((bullet) => (
-                  <li key={bullet.text} className="flex-center gap-4">
+                {bulletsAbout.map(({ text }) => (
+                  <li key={text} className="flex-center gap-4">
                     <Image
                       src={"/svg/icon-check.svg"}
                       alt="Ícone de check"
@@ -42,7 +71,7 @@ export function AboutSection() {
                       height={24}
                     />
                     <span className="text-sabe leading-6 text-gray-200">
-                      {bullet.text}
+                      {text}
                     </span>
                   </li>
                 ))}
@@ -70,7 +99,18 @@ export function AboutSection() {
             height={640}
           />
           <CardImage />
+          <CirclesAnimation />
         </div>
+      </Container>
+      <Container className="flex-between pt-section">
+        {listItems.map(({ image, title, description }, index) => (
+          <ListItem
+            key={index}
+            image={image}
+            title={title}
+            description={description}
+          />
+        ))}
       </Container>
     </section>
   )
