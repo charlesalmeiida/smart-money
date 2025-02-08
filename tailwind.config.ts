@@ -55,9 +55,13 @@ export default {
         grid: "77.5rem",
         button: "14.4375rem",
         card: "17.375rem",
+        banner: "25.5rem",
       },
       padding: {
         section: "7.5rem",
+      },
+      borderWidth: {
+        button: "0.0938rem",
       },
     },
   },

@@ -7,6 +7,8 @@ const button = tv({
       primary: "bg-primary-default text-neutral-white",
       secondary:
         "bg-neutral-white text-gray-700 hover:bg-primary-default hover:text-neutral-white",
+      outline:
+        "bg-transparent border border-button border-primary-default text-primary-default hover:bg-primary-default hover:text-neutral-white",
     },
     size: {
       sm: "py-3 px-6 text-sm",
@@ -18,7 +20,7 @@ const button = tv({
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode
-  color: "primary" | "secondary"
+  color: "primary" | "secondary" | "outline"
   size: "sm" | "lg" | "md"
 }
 
