@@ -1,6 +1,6 @@
-import { Container } from "@/components/container";
-import Image from "next/image";
-import Link from "next/link";
+import { Container } from "@/components/container"
+import Image from "next/image"
+import Link from "next/link"
 
 export function Copyright() {
   return (
@@ -9,12 +9,14 @@ export function Copyright() {
       <div className="flex-between items-center pt-[52px]">
         <div className="flex-center gap-20">
           <div>
-            <Image
-              src={"/svg/logo-smartmoney.svg"}
-              width={237}
-              height={37}
-              alt={"Logo SmartMoney"}
-            />
+            <Link href={"/"}>
+              <Image
+                src={"/svg/logo-smartmoney.svg"}
+                width={237}
+                height={37}
+                alt={"Logo SmartMoney"}
+              />
+            </Link>
           </div>
           <span className="text-sm text-neutral-white">
             © 2022 SmartBusiness. Todos os direitos reservados

@@ -1,7 +1,7 @@
 import { Container } from "@/components/container"
 import { TagTech } from "../tag-tech"
 import { BigNumbers } from "./big-numbers"
-import { FormHero } from "../form/form-hero"
+import { FormHero } from "../form"
 
 export function HeroSection() {
   return (
