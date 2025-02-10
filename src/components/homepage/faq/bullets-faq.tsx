@@ -15,7 +15,7 @@ export function BulletsFaq({ title, description, icon }: BulletsFaqProps) {
       : "/svg/icon-zap.svg"
 
   return (
-    <div className="flex-center gap-8">
+    <button className="flex-center text-left gap-8">
       <Image
         src={image}
         width={33}
@@ -26,6 +26,6 @@ export function BulletsFaq({ title, description, icon }: BulletsFaqProps) {
         <h6 className="text-lg font-semibold text-gray-700">{title}</h6>
         <p className="text-gray-200 text-sm">{description}</p>
       </div>
-    </div>
+    </button>
   )
 }
