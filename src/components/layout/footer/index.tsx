@@ -1,9 +1,31 @@
 import { Container } from "@/components/container"
 import { Newsletter } from "./newsletter"
-import { navLinks } from "../header"
 import Image from "next/image"
 import Link from "next/link"
 import { Copyright } from "./copyright"
+
+export const navLinks = [
+  {
+    page: "Quem somos",
+    link: "/",
+  },
+  {
+    page: "Soluções",
+    link: "/",
+  },
+  {
+    page: "Carreira",
+    link: "/",
+  },
+  {
+    page: "Contato",
+    link: "/",
+  },
+  {
+    page: "Suporte",
+    link: "/",
+  },
+]
 
 const socialLinks = [
   {

@@ -1,8 +1,11 @@
+"use client"
+
 import Image from "next/image"
+import { CardAnimate } from "./card-animate.styles"
 
 export function CardImage() {
   return (
-    <div className="bg-neutral-white absolute w-full bottom-20 -left-52 shadow-card rounded-md max-w-card py-6 pl-6 pr-[15px] space-y-4">
+    <CardAnimate className="bg-neutral-white absolute w-full bottom-20 -left-52 shadow-card rounded-md max-w-card py-6 pl-6 pr-[15px] space-y-4">
       <div className="flex-between items-start">
         <div>
           <h6 className="font-semibold text-gray-400">R$ 999,90</h6>
@@ -22,6 +25,6 @@ export function CardImage() {
         height={35}
         alt="Imagem de avatars"
       />
-    </div>
+    </CardAnimate>
   )
 }

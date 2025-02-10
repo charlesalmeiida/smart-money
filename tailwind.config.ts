@@ -15,6 +15,7 @@ export default {
     boxShadow: {
       shape: "0px 30px 50px -10px rgba(76, 74, 94, 0.20)",
       card: "0px 20px 30px -10px rgba(76, 74, 94, 0.15)",
+      header: "0px 10px 30px 0px rgba(137, 133, 188, 0.06)",
     },
     colors: {
       primary: {

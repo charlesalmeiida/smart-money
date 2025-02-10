@@ -1,38 +1,38 @@
+"use client"
+
 import { Button } from "@/components/button"
 import { Container } from "@/components/container"
 import Image from "next/image"
 import Link from "next/link"
-
-export const navLinks = [
-  {
-    page: "Quem somos",
-    link: "/",
-  },
-  {
-    page: "Soluções",
-    link: "/",
-  },
-  {
-    page: "Carreira",
-    link: "/",
-  },
-  {
-    page: "Contato",
-    link: "/",
-  },
-  {
-    page: "Suporte",
-    link: "/",
-  },
-]
+import { navLinks } from "../footer"
+import { useEffect, useState } from "react"
 
 export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY >= 850)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <header className="absolute w-full top-0 z-50">
-      <Container className="flex-between py-7  items-center text-neutral-gray01">
+    <header
+      className={`${
+        isScrolled ? "sticky bg-neutral-white shadow-header" : "absolute"
+      } w-full top-0 transition-all z-50`}
+    >
+      <Container className="flex-between py-7 items-center">
         <Link href={"/"}>
           <Image
-            src={"/svg/logo-smartmoney.svg"}
+            src={`${
+              isScrolled
+                ? "/svg/logo-smartmoney-black.svg"
+                : "/svg/logo-smartmoney.svg"
+            }`}
             alt={"Logo SmartMoney"}
             width={231}
             height={36}
@@ -43,13 +43,17 @@ export function Header() {
             {navLinks.map(({ page, link }) => (
               <li
                 key={page}
-                className="text-sm text-neutral-white transition-all hover:brightness-90"
+                className={`text-sm ${
+                  isScrolled
+                    ? "text-gray-800 hover:text-gray-200"
+                    : "text-neutral-white hover:brightness-90"
+                } transition-all`}
               >
                 <Link href={link}>{page}</Link>
               </li>
             ))}
           </ul>
-          <Button size="sm" color="secondary">
+          <Button size="sm" color={isScrolled ? "primary" : "secondary"}>
             Cadastre-se
           </Button>
         </nav>
