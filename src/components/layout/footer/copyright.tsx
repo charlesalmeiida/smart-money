@@ -9,7 +9,7 @@ export function Copyright() {
       <div className="flex-between items-center pt-[52px]">
         <div className="flex-center gap-20">
           <div>
-            <Link href={"/"}>
+            <Link href={"/                                   "}>
               <Image
                 src={"/svg/logo-smartmoney.svg"}
                 width={237}
