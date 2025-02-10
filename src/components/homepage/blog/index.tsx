@@ -1,5 +1,5 @@
 import { Container } from "@/components/container"
-import { CardBlog } from "./card-blog"
+import { SlidePosts } from "./slide-posts"
 
 export function BlogSection() {
   return (
@@ -11,9 +11,7 @@ export function BlogSection() {
             Notícias do mundo da tecnologia
           </h4>
         </div>
-        <div className="mt-14">
-          <CardBlog />
-        </div>
+        <SlidePosts />
       </Container>
     </section>
   )

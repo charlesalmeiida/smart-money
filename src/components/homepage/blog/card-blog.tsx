@@ -32,7 +32,7 @@ export function CardBlog() {
             Savannah Nguyen
           </strong>
           <p className="text-sm text-gray-400">Autor</p>
-        </div>
+        </div> 
       </div>
     </Link>
   )
