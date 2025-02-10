@@ -3,7 +3,7 @@ import { Container } from "@/components/container"
 import Image from "next/image"
 import Link from "next/link"
 
-const navLinks = [
+export const navLinks = [
   {
     page: "Quem somos",
     link: "/",

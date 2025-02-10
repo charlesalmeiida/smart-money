@@ -2,6 +2,7 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { archivo, calibri } from "@/utils/fonts"
 import { Header } from "@/components/layout/header"
+import { Footer } from "@/components/layout/footer"
 
 export const metadata: Metadata = {
   title: "SmartMoney | Tecnologia disruptiva",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body className={`${archivo} ${calibri} antialiased`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

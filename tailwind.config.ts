@@ -9,6 +9,7 @@ export default {
   theme: {
     backgroundImage: {
       hero: "url('/svg/bg-hero.svg')",
+      footer: "url('/svg/bg-footer.svg')",
     },
     boxShadow: {
       shape: "0px 30px 50px -10px rgba(76, 74, 94, 0.20)",
@@ -56,6 +57,10 @@ export default {
         button: "14.4375rem",
         card: "17.375rem",
         banner: "25.5rem",
+        newsletter: "30.375rem",
+      },
+      margin: {
+        section: "7.5rem",
       },
       padding: {
         section: "7.5rem",
