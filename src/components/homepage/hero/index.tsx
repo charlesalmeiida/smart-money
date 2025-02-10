@@ -8,7 +8,7 @@ export function HeroSection() {
     <main>
       <section className="pt-[136px] bg-hero relative bg-center bg-no-repeat bg-cover">
         <Container className="flex-between">
-          <div className="space-y-14">
+          <div className="space-y-14 mt-9">
             <div>
               <TagTech />
               <h3 className="text-neutral-white mt-6 font-semibold max-w-[656px]">
