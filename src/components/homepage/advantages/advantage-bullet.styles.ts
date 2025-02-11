@@ -1,7 +1,12 @@
 import styled from "styled-components"
 import { theme } from "@/utils/tailwind-theme"
 
-export const BulletContainer = styled.button<{ $active: boolean }>`
+interface AdvantageBulletProps {
+  $active: boolean
+  onClick?: () => void
+}
+
+export const BulletContainer = styled.button<AdvantageBulletProps>`
   background-color: ${(props) =>
     props.$active ? theme.colors.neutral.white : "transparent"};
   border-radius: 6px;
@@ -9,6 +14,16 @@ export const BulletContainer = styled.button<{ $active: boolean }>`
   width: 100%;
   max-width: 487px;
   text-align: left;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: ${theme.colors.neutral.white};
+
+    h6,
+    p {
+      color: ${theme.colors.gray[500]};
+    }
+  }
 
   h6 {
     color: ${(props) =>
@@ -30,10 +45,19 @@ export const BulletContainer = styled.button<{ $active: boolean }>`
     border-radius: 6px;
     opacity: ${(props) => (props.$active ? 1 : 0)};
     .progress {
-      width: 143px;
+      animation: progress 6s ease-in-out infinite;
       height: 6px;
       background-color: ${theme.colors.primary.default};
       border-radius: 6px;
+    }
+  }
+
+  @keyframes progress {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
     }
   }
 `

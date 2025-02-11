@@ -1,23 +1,33 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export function CardBlog() {
+interface CardBlogProps {
+  link: string
+  title: string
+  author: string
+  date: string
+  image: string
+}
+
+export function CardBlog({ link, title, author, date, image }: CardBlogProps) {
   return (
-    <Link href={""} className="space-y-6">
-      <Image
-        src={"/img/image-blog.png"}
-        width={280}
-        height={340}
-        alt="Imagem do post do blog"
-      />
+    <Link href={`/blog/${link}`} className="space-y-6">
+      <div className="relative w-[280px] h-[340px]">
+        <Image
+          src={image}
+          fill
+          alt="Imagem do post do blog"
+          className="object-cover"
+        />
+      </div>
       <div className="space-y-3 max-w-72">
         <div className="flex-center gap-4">
           <strong className="text-primary-default font-semibold">
             Business
           </strong>
-          <span>Outubro 2021</span>
+          <span>{date}</span>
         </div>
-        <p>Sollicitudin a sagittis, risus nisl, fermentum, tincidunt dolor</p>
+        <p>{title}</p>
       </div>
       <div className="flex-center gap-4">
         <Image
@@ -28,11 +38,9 @@ export function CardBlog() {
           alt="Imagem do post do blog"
         />
         <div>
-          <strong className="font-semibold text-gray-700">
-            Savannah Nguyen
-          </strong>
+          <strong className="font-semibold text-gray-700">{author}</strong>
           <p className="text-sm text-gray-400">Autor</p>
-        </div> 
+        </div>
       </div>
     </Link>
   )

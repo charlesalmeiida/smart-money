@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { archivo, calibri } from "@/utils/fonts"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { Provider } from "jotai"
 
 export const metadata: Metadata = {
   title: "SmartMoney | Tecnologia disruptiva",
@@ -17,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <body className={`${archivo} ${calibri} antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+        <Provider>
+          <Header />
+          {children}
+          <Footer />
+        </Provider>
       </body>
     </html>
   )
