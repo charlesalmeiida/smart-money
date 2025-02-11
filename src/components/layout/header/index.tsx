@@ -7,7 +7,11 @@ import Link from "next/link"
 import { navLinks } from "../footer"
 import { useEffect, useState } from "react"
 
-export function Header() {
+interface HeaderProps {
+  isBlog?: boolean
+}
+
+export function Header({ isBlog = false }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -19,12 +23,15 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const bgClass =
+    isBlog === true
+      ? "bg-gray-700"
+      : isScrolled
+      ? "sticky bg-neutral-white shadow-header"
+      : "absolute"
+
   return (
-    <header
-      className={`${
-        isScrolled ? "sticky bg-neutral-white shadow-header" : "absolute"
-      } w-full top-0 transition-all z-50`}
-    >
+    <header className={`${bgClass} w-full top-0 transition-all z-50`}>
       <Container className="flex-between py-7 items-center">
         <Link href={"/"}>
           <Image

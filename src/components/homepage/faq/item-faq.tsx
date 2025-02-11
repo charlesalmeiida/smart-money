@@ -5,37 +5,35 @@ import {
   Answer,
   ButtonFaq,
   ContainerQuestion,
+  IconWrapper,
   Question,
 } from "./item-faq.styles"
-import { useState } from "react"
 
 interface ItemFaqProps {
   number: string
   question: string
+  isOpen: boolean
+  onToggle: () => void
 }
 
-export function ItemFaq({ number, question }: ItemFaqProps) {
-  const [isFaqOpen, setFaqOpen] = useState(false)
-
-  const handleFaq = () => {
-    setFaqOpen(!isFaqOpen)
-  }
-
+export function ItemFaq({ number, question, isOpen, onToggle }: ItemFaqProps) {
   return (
-    <ButtonFaq onClick={handleFaq}>
+    <ButtonFaq onClick={onToggle}>
       <ContainerQuestion>
         <Question>
           <h6>{number}</h6>
           <p>{question}</p>
         </Question>
-        <Image
-          src={"/svg/icon-plus.svg"}
-          width={16}
-          height={16}
-          alt="Ícone para abrir a resposta do FAQ"
-        />
+        <IconWrapper $isOpen={isOpen}>
+          <Image
+            src={isOpen ? "/svg/icon-close-faq.svg" : "/svg/icon-plus.svg"}
+            width={16}
+            height={16}
+            alt="Ícone para abrir/fechar a resposta do FAQ"
+          />
+        </IconWrapper>
       </ContainerQuestion>
-      {isFaqOpen && (
+      {isOpen && (
         <Answer>
           Turpis at malesuada orci ultricies ipsum amet sed cras. Enim ut urna
           feugiat ultrices semper quisque at. Viverra lectus ut a gravida

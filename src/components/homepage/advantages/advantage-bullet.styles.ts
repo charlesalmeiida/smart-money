@@ -37,3 +37,19 @@ export const BulletContainer = styled.button<{ $active: boolean }>`
     }
   }
 `
+
+export const TechContainer = styled.div`
+  animation: floating 6s ease-in-out infinite;
+
+  @keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    66% {
+      transform: translateY(-30px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+`

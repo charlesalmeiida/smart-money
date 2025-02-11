@@ -1,6 +1,10 @@
+"use client"
+
 import { Container } from "@/components/container"
 import { BulletsFaq } from "./bullets-faq"
 import { ItemFaq } from "./item-faq"
+import { useState } from "react"
+import { motion } from "motion/react"
 
 const questions = [
   {
@@ -26,6 +30,12 @@ const questions = [
 ]
 
 export function FaqSection() {
+  const [openFaq, setOpenFaq] = useState<string | null>(null)
+
+  const handleToggle = (number: string) => {
+    setOpenFaq((prev) => (prev === number ? null : number))
+  }
+
   return (
     <section className="py-section bg-neutral-gray01">
       <Container className="flex-between">
@@ -43,28 +53,54 @@ export function FaqSection() {
             </p>
           </div>
           <div className="mt-[60px] space-y-11">
-            <BulletsFaq
-              icon="duvidas"
-              title="Dúvidas?"
-              description="Envie uma mensagem para nosso time"
-            />
-            <BulletsFaq
-              icon="faça-parte"
-              title="Faça parte"
-              description="Cadastre-se para transformar sua empresa"
-            />
-            <BulletsFaq
-              icon="chama-no-zap"
-              title="Chama no zap"
-              description="Fale com conosso comercial"
-            />
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <BulletsFaq
+                icon="duvidas"
+                title="Dúvidas?"
+                description="Envie uma mensagem para nosso time"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <BulletsFaq
+                icon="faça-parte"
+                title="Faça parte"
+                description="Cadastre-se para transformar sua empresa"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <BulletsFaq
+                icon="chama-no-zap"
+                title="Chama no zap"
+                description="Fale com conosso comercial"
+              />
+            </motion.div>
           </div>
         </div>
         <div>
           <ul className="space-y-1">
             {questions.map(({ number, question }) => (
               <li key={number}>
-                <ItemFaq number={number} question={question} />
+                <ItemFaq
+                  isOpen={openFaq === number}
+                  onToggle={() => handleToggle(number)}
+                  number={number}
+                  question={question}
+                />
               </li>
             ))}
           </ul>

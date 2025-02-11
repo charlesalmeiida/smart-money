@@ -1,13 +1,22 @@
+"use client"
+
 import Image from "next/image"
 import { TagTech } from "../tag-tech"
+import { TechContainer } from "./advantage-bullet.styles"
+import { motion } from "motion/react"
 
 export function ImageAdvantages() {
   return (
     <div className="relative flex gap-7">
-      <div className="absolute top-[330px] -left-8">
+      <TechContainer className="absolute top-[330px] -left-8">
         <TagTech color="white" />
-      </div>
-      <div>
+      </TechContainer>
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
         <Image
           src={"/img/image-woman-advantages.png"}
           width={282}
@@ -15,8 +24,14 @@ export function ImageAdvantages() {
           alt="Imagem de mulher no celular"
           quality={100}
         />
-      </div>
-      <div className="mt-36">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        viewport={{ once: true }}
+        className="mt-36"
+      >
         <Image
           src={"/img/image-advantages.png"}
           width={281}
@@ -24,7 +39,7 @@ export function ImageAdvantages() {
           alt="Imagem processos"
           quality={100}
         />
-      </div>
+      </motion.div>
       <div>
         <Image
           className="absolute bottom-20 left-[139px]"
