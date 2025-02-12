@@ -2,16 +2,24 @@ import Image from "next/image"
 import Link from "next/link"
 
 interface CardBlogProps {
-  link: string
+  id: number
   title: string
   author: string
   date: string
   image: string
+  slug: string
 }
 
-export function CardBlog({ link, title, author, date, image }: CardBlogProps) {
+export function CardBlog({
+  title,
+  author,
+  date,
+  image,
+  id,
+  slug,
+}: CardBlogProps) {
   return (
-    <Link href={`/blog/${link}`} className="space-y-6">
+    <Link href={`/blog/${id}?=${slug}`} className="space-y-6">
       <div className="relative w-[280px] h-[340px]">
         <Image
           src={image}

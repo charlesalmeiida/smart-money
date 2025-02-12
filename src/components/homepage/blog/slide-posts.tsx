@@ -77,7 +77,8 @@ export function SlidePosts() {
         {posts.map((post: Post) => (
           <SwiperSlide key={post.id}>
             <CardBlog
-              link={post.slug}
+              id={post.id}
+              slug={post.slug}
               author={post._embedded.author[0].name}
               image={
                 post._embedded["wp:featuredmedia"][0].media_details.sizes.large

@@ -1,7 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export function Breadcrumb() {
+interface BreadcrumbProps {
+  children: React.ReactNode
+}
+
+export function Breadcrumb({ children }: BreadcrumbProps) {
   return (
     <div className="flex-center gap-[156px]">
       <Link
@@ -27,10 +31,7 @@ export function Breadcrumb() {
         </Link>
         <span className="text-sm text-gray-200">
           {" "}
-          / artigos /{" "}
-          <strong className="text-primary-dark">
-            Lorem ipsum dolor sit amet, conse...
-          </strong>
+          / artigos / <strong className="text-primary-dark">{children}</strong>
         </span>
       </div>
     </div>
