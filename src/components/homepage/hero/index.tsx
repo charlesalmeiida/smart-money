@@ -6,7 +6,19 @@ import { BigNumbers } from "./big-numbers"
 import { FormHero } from "../form"
 import { motion } from "motion/react"
 
-export function HeroSection() {
+interface HeroSectionProps {
+  title: string
+  subtitle: string
+  titleForm: string
+  buttonCTA: string
+}
+
+export function HeroSection({
+  title,
+  subtitle,
+  titleForm,
+  buttonCTA,
+}: HeroSectionProps) {
   return (
     <main>
       <section className="pt-[136px] bg-mobile md:bg-hero relative bg-bottom bg-no-repeat bg-cover">
@@ -15,10 +27,10 @@ export function HeroSection() {
             <div>
               <TagTech />
               <h3 className="text-neutral-white mx-auto lg:mx-0 mt-6 font-semibold max-w-heading">
-                Conta digital que não é só uma conta digital.
+                {title}
               </h3>
               <p className="text-neutral-white max-w-80 lg:max-w-full mx-auto lg:mx-0 text-base mt-3 lg:text-lg">
-                Pellentesque rutrum turpis non est turpis pretium morbi urna.
+                {subtitle}
               </p>
             </div>
             <div className="w-8 h-[2px] mx-auto lg:mx-0 bg-primary-default"></div>
@@ -51,7 +63,7 @@ export function HeroSection() {
               </motion.div>
             </div>
           </div>
-          <FormHero />
+          <FormHero buttonCTA={buttonCTA} titleForm={titleForm} />
         </Container>
       </section>
     </main>

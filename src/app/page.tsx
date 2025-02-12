@@ -5,10 +5,25 @@ import { FaqSection } from "@/components/homepage/faq"
 import { BlogSection } from "@/components/homepage/blog"
 import { AdvantagesSection } from "@/components/homepage/advantages"
 
-export default function Home() {
+import { client } from "@/sanity/lib/client"
+
+export default async function Home() {
+  const query = `*[_type == "homepage"][0]{
+    title,
+    subtitle,
+    form, 
+    buttonCta
+  }`
+  const { title, subtitle, buttonCta, form } = await client.fetch(query)
+
   return (
     <>
-      <HeroSection />
+      <HeroSection
+        title={title}
+        subtitle={subtitle}
+        buttonCTA={buttonCta}
+        titleForm={form}
+      />
       <AboutSection />
       <BlogSection />
       <AdvantagesSection />

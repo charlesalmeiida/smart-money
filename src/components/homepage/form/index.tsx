@@ -6,7 +6,12 @@ import { InputText } from "./input-text"
 import { PrivacyText } from "./privacy-text"
 import { useState } from "react"
 
-export function FormHero() {
+interface FormHeroProps {
+  titleForm: string
+  buttonCTA: string
+}
+
+export function FormHero({ titleForm, buttonCTA }: FormHeroProps) {
   const [category, setCategory] = useState("person")
 
   const getCategory = (category: "person" | "business") => {
@@ -19,9 +24,7 @@ export function FormHero() {
         <span className="text-sm font-semibold leading-5 text-gray-50">
           Faça parte da revolução digital!
         </span>
-        <h6 className="font-semibold max-w-72">
-          Cadastre-se e faça parte do lançamento oficial
-        </h6>
+        <h6 className="font-semibold max-w-72">{titleForm}</h6>
       </div>
       <form className="w-full max-w-form space-y-6">
         <fieldset className="flex-center gap-8">
@@ -42,9 +45,7 @@ export function FormHero() {
           <InputText type="tel" placeholder="Celular" name="phone" />
         </div>
         <Button type="submit" color="primary" size="lg">
-          {category === "person"
-            ? "Quero ser cliente"
-            : "Quero para minha empresa"}
+          {category === "person" ? buttonCTA : "Quero para minha empresa"}
         </Button>
       </form>
       <PrivacyText />
