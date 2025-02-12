@@ -9,7 +9,7 @@ export function CardImage() {
     <motion.div
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, ease: "easeIn" }}
+      transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
       <CardAnimate className="bg-neutral-white absolute w-full bottom-0 lg:bottom-20 left-0 md:left-20 lg:-left-52 shadow-card rounded-md max-w-card py-6 pl-6 pr-[15px] space-y-4">

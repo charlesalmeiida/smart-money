@@ -3,7 +3,7 @@ import { BannerText } from "./banner-text"
 
 export function BannersSection() {
   return (
-    <section className="py-16 lg:py-section">
+    <section id="contato" className="py-16 lg:py-section">
       <Container className="flex flex-col gap-14 lg:gap-0 lg:flex-row justify-around text-center">
         <BannerText
           button="primary"

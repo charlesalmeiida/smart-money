@@ -3,7 +3,7 @@ import { SlidePosts } from "./slide-posts"
 
 export function BlogSection() {
   return (
-    <section className="py-16 lg:py-section bg-neutral-gray01">
+    <section id="carreira" className="py-16 lg:py-section bg-neutral-gray01">
       <Container>
         <div className="space-y-3 max-w-[411px] mx-auto lg:mx-0 ">
           <span className="text-primary-default hidden lg:block font-semibold">

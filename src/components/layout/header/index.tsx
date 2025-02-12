@@ -10,23 +10,23 @@ import Hamburger from "hamburger-react"
 const navLinks = [
   {
     page: "Quem somos",
-    link: "/",
+    link: "#quem-somos",
   },
   {
     page: "Soluções",
-    link: "/",
+    link: "#solucoes",
   },
   {
     page: "Carreira",
-    link: "/",
+    link: "#carreira",
   },
   {
     page: "Contato",
-    link: "/",
+    link: "#contato",
   },
   {
     page: "Suporte",
-    link: "/",
+    link: "#suporte",
   },
 ]
 

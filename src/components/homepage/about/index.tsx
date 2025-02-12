@@ -46,7 +46,10 @@ const listItems = [
 
 export function AboutSection() {
   return (
-    <section className="bg-neutral-white relative -mt-10 pt-section pb-16 lg:pb-section">
+    <section
+      id="quem-somos"
+      className="bg-neutral-white relative -mt-10 pt-section pb-16 lg:pb-section"
+    >
       <Container className="flex flex-col lg:flex-row justify-between items-center text-center lg:text-left lg:items-start">
         <div>
           <div className="space-y-12">

@@ -37,7 +37,7 @@ export function FaqSection() {
   }
 
   return (
-    <section className="py-16 lg:py-section bg-neutral-gray01">
+    <section id="suporte" className="py-16 lg:py-section bg-neutral-gray01">
       <Container className="flex flex-col gap-12 lg:gap-0 lg:flex-row justify-between">
         <div className="mx-auto lg:mx-0">
           <div className="space-y-4 max-w-96 text-center lg:text-left">

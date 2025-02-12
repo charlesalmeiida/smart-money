@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-br" suppressHydrationWarning>
+    <html lang="pt-br" suppressHydrationWarning className="scroll-smooth">
       <body className={`${archivo} ${calibri} antialiased`}>
         <Provider>
           <Header />

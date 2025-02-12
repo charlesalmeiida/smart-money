@@ -29,7 +29,10 @@ export function AdvantagesSection() {
   }
 
   return (
-    <section className="bg-vantagens py-16 lg:py-section bg-gray-800 bg-cover bg-center bg-no-repeat">
+    <section
+      id="solucoes"
+      className="bg-vantagens py-16 lg:py-section bg-gray-800 bg-cover bg-center bg-no-repeat"
+    >
       <Container>
         <div className="flex flex-col justify-between lg:flex-row">
           <div className="space-y-12 lg:space-y-[78px]">

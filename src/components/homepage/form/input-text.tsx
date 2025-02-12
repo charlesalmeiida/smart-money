@@ -12,6 +12,7 @@ export function InputText({ type, placeholder, name }: InputTextProps) {
       name={name}
       id={name}
       placeholder={placeholder}
+      required
     />
   )
 }
