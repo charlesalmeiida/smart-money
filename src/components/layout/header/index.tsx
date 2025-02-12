@@ -6,6 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { navLinks } from "../footer"
 import { useEffect, useState } from "react"
+import Hamburger from "hamburger-react"
 
 interface HeaderProps {
   isBlog?: boolean
@@ -27,43 +28,52 @@ export function Header({ isBlog = false }: HeaderProps) {
     isBlog === true
       ? "bg-gray-700"
       : isScrolled
-      ? "sticky bg-neutral-white shadow-header"
+      ? "sticky bg-neutral-white shadow-header slide"
       : "absolute"
 
   return (
     <header className={`${bgClass} w-full top-0 transition-all z-50`}>
-      <Container className="flex-between py-7 items-center">
+      <Container className="flex-between px-8 md:px-0 py-7 md:py-7 items-center">
         <Link href={"/"}>
-          <Image
-            src={`${
-              isScrolled
-                ? "/svg/logo-smartmoney-black.svg"
-                : "/svg/logo-smartmoney.svg"
-            }`}
-            alt={"Logo SmartMoney"}
-            width={231}
-            height={36}
-          />
+          <div className="w-40 h-6 md:w-[231px] md:h-[36px] relative">
+            <Image
+              src={`${
+                isScrolled
+                  ? "/svg/logo-smartmoney-black.svg"
+                  : "/svg/logo-smartmoney.svg"
+              }`}
+              alt={"Logo SmartMoney"}
+              fill
+              className="object-contain"
+            />
+          </div>
         </Link>
-        <nav className="flex-center gap-16">
-          <ul className="flex-center gap-10">
-            {navLinks.map(({ page, link }) => (
-              <li
-                key={page}
-                className={`text-sm ${
-                  isScrolled
-                    ? "text-gray-800 hover:text-gray-200"
-                    : "text-neutral-white hover:brightness-90"
-                } transition-all`}
-              >
-                <Link href={link}>{page}</Link>
-              </li>
-            ))}
-          </ul>
-          <Button size="sm" color={isScrolled ? "primary" : "secondary"}>
-            Cadastre-se
-          </Button>
-        </nav>
+        <div className="flex-center gap-8">
+          <div className="lg:hidden">
+            <Hamburger color="#fff" size={20} />
+          </div>
+          <nav className="hidden md:flex items-center gap-16">
+            <ul className="hidden lg:flex items-center gap-10">
+              {navLinks.map(({ page, link }) => (
+                <li
+                  key={page}
+                  className={`text-sm ${
+                    isScrolled
+                      ? "text-gray-800 hover:text-gray-200"
+                      : "text-neutral-white hover:brightness-90"
+                  } transition-all`}
+                >
+                  <Link href={link}>{page}</Link>
+                </li>
+              ))}
+            </ul>
+            <div className="hidden md:flex">
+              <Button size="sm" color={isScrolled ? "primary" : "secondary"}>
+                Cadastre-se
+              </Button>
+            </div>
+          </nav>
+        </div>
       </Container>
     </header>
   )

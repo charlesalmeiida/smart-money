@@ -1,5 +1,8 @@
+"use client"
+
 import { Button } from "@/components/button"
 import Image from "next/image"
+import { motion } from "motion/react"
 
 interface BannerTextProps {
   type: "sale" | "support"
@@ -15,7 +18,13 @@ export function BannerText({
   button,
 }: BannerTextProps) {
   return (
-    <div className="flex-total-center space-y-8 flex-col max-w-banner">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="flex-total-center space-y-8 flex-col max-w-banner"
+    >
       <Image
         src={type === "sale" ? "/svg/icon-money.svg" : "/svg/icon-chat.svg"}
         width={64}
@@ -31,6 +40,6 @@ export function BannerText({
       <Button color={button} size="md">
         {type === "sale" ? "Quero ser cliente" : "Fale conosco"}
       </Button>
-    </div>
+    </motion.div>
   )
 }

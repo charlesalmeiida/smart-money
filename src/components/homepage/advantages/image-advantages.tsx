@@ -41,20 +41,34 @@ export function ImageAdvantages() {
         />
       </motion.div>
       <div>
-        <Image
-          className="absolute bottom-20 left-[139px]"
-          src={"/svg/arrow.svg"}
-          width={149}
-          height={55}
-          alt="Seta"
-        />
-        <Image
-          className="absolute right-[132px] rotate-180 top-12"
-          src={"/svg/arrow.svg"}
-          width={149}
-          height={55}
-          alt="Seta"
-        />
+        <motion.div
+          initial={{ opacity: 0, zoom: 0 }}
+          whileInView={{ opacity: 1, zoom: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <Image
+            className="absolute bottom-20 left-[139px]"
+            src={"/svg/arrow.svg"}
+            width={149}
+            height={55}
+            alt="Seta"
+          />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, zoom: 0 }}
+          whileInView={{ opacity: 1, zoom: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <Image
+            className="absolute right-[132px] rotate-180 top-12"
+            src={"/svg/arrow.svg"}
+            width={149}
+            height={55}
+            alt="Seta"
+          />
+        </motion.div>
       </div>
     </div>
   )
