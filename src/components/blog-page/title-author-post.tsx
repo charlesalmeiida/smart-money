@@ -10,8 +10,8 @@ interface TitleAndAuthorProps {
 export function TitleAndAuthor({ title, author, date }: TitleAndAuthorProps) {
   return (
     <div>
-      <h4 className="text-4xl text-gray-100 font-semibold mt-4">{title}</h4>
-      <div className="flex-center gap-3 mt-10">
+      <h4 className="text-3xl lg:text-4xl text-gray-100 font-semibold mt-4">{title}</h4>
+      <div className="flex-center gap-3 mt-6 lg:mt-10">
         <Image
           src={"/img/avatar-blog-page.png"}
           width={29}

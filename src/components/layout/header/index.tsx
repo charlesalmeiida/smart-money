@@ -4,9 +4,31 @@ import { Button } from "@/components/button"
 import { Container } from "@/components/container"
 import Image from "next/image"
 import Link from "next/link"
-import { navLinks } from "../footer"
 import { useEffect, useState } from "react"
 import Hamburger from "hamburger-react"
+
+const navLinks = [
+  {
+    page: "Quem somos",
+    link: "/",
+  },
+  {
+    page: "Soluções",
+    link: "/",
+  },
+  {
+    page: "Carreira",
+    link: "/",
+  },
+  {
+    page: "Contato",
+    link: "/",
+  },
+  {
+    page: "Suporte",
+    link: "/",
+  },
+]
 
 interface HeaderProps {
   isBlog?: boolean
@@ -33,7 +55,7 @@ export function Header({ isBlog = false }: HeaderProps) {
 
   return (
     <header
-      className={`${bgClass} w-full px-6 md:px-0 py-7 md:py-7 top-0 transition-all z-50`}
+      className={`${bgClass} w-full md:px-0 py-7 md:py-7 top-0 transition-all z-50`}
     >
       <Container className="flex-between items-center">
         <Link href={"/"}>
@@ -52,7 +74,7 @@ export function Header({ isBlog = false }: HeaderProps) {
         </Link>
         <div className="flex-center gap-8">
           <div className="lg:hidden">
-            <Hamburger color="#fff" size={20} />
+            <Hamburger color={isScrolled ? "#070514" : "#fff"} size={20} />
           </div>
           <nav className="hidden md:flex items-center gap-16">
             <ul className="hidden lg:flex items-center gap-10">

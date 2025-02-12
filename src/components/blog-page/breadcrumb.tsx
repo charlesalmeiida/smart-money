@@ -7,7 +7,7 @@ interface BreadcrumbProps {
 
 export function Breadcrumb({ children }: BreadcrumbProps) {
   return (
-    <div className="flex-center gap-[156px]">
+    <div className="flex-center justify-between lg:justify-start gap-4 lg:gap-[156px]">
       <Link
         href={"/"}
         className="flex-center gap-2 text-gray-200 text-sm text-opacity-60"

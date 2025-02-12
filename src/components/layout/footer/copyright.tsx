@@ -5,9 +5,9 @@ import Link from "next/link"
 export function Copyright() {
   return (
     <Container>
-      <div className="w-full h-px bg-gray-400 mt-section"></div>
-      <div className="flex-between items-center pt-[52px]">
-        <div className="flex-center gap-20">
+      <div className="w-full h-px bg-gray-400 mt-12 lg:mt-section"></div>
+      <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-0 items-center pt-12">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
           <div>
             <Link href={"/"}>
               <Image
@@ -18,11 +18,11 @@ export function Copyright() {
               />
             </Link>
           </div>
-          <span className="text-sm text-neutral-white">
+          <span className="text-sm text-center max-w-48 lg:max-w-full text-neutral-white">
             © 2022 SmartBusiness. Todos os direitos reservados
           </span>
         </div>
-        <div className="flex-center gap-44">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-44">
           <button className="flex-center gap-3">
             <Image
               src={"/svg/icon-global.svg"}

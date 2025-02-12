@@ -36,8 +36,8 @@ export function SlidePosts() {
   }
 
   return (
-    <div>
-      <div className="flex justify-end gap-8 mb-14">
+    <div className="pt-7 lg:pt-0 pl-6 lg:pl-0">
+      <div className="hidden lg:flex justify-end gap-8 mb-14">
         <button className="swiper-button-prev">
           <Image
             className="rotate-180"
@@ -62,6 +62,20 @@ export function SlidePosts() {
         observeParents={true}
         slidesPerView={4}
         spaceBetween={34}
+        breakpoints={{
+          350: {
+            slidesPerView: 1.2,
+          },
+          512: {
+            slidesPerView: 1.6,
+          },
+          768: {
+            slidesPerView: 2.5,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+        }}
         pagination={{
           clickable: true,
           el: ".custom-pagination",

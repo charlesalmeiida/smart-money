@@ -17,7 +17,7 @@ export default async function BlogPage({
   const post = await data.json()
 
   return (
-    <section className="pt-14 pb-44">
+    <section className="pt-14 pb-14 lg:pb-44">
       <Container>
         <Breadcrumb>{post.title.rendered}</Breadcrumb>
         <div className="w-full max-w-[800px] mx-auto mt-4">
@@ -30,7 +30,7 @@ export default async function BlogPage({
             title={post.title.rendered}
           />
         </div>
-        <div className="w-full mt-14">
+        <div className="w-full mt-10 lg:mt-14">
           <div className="relative w-full mx-auto max-w-[1008px] h-[434px]">
             <Image
               src={

@@ -4,25 +4,25 @@ import Image from "next/image"
 import Link from "next/link"
 import { Copyright } from "./copyright"
 
-export const navLinks = [
+const navFooter = [
   {
-    page: "Quem somos",
+    page: "Quero ser cliente",
     link: "/",
   },
   {
-    page: "Soluções",
+    page: "Acessar conta",
     link: "/",
   },
   {
-    page: "Carreira",
+    page: "Dúvidas",
     link: "/",
   },
   {
-    page: "Contato",
+    page: "Termos e condições",
     link: "/",
   },
   {
-    page: "Suporte",
+    page: "Fale conosco",
     link: "/",
   },
 ]
@@ -48,16 +48,17 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-footer bg-gray-800 bg-no-repeat bg-center bg-cover pt-36 pb-[50px]">
-      <Container className="flex-between">
-        <div className="space-y-6 flex-1">
+    <footer className="bg-footer bg-gray-800 bg-no-repeat bg-center bg-cover pt-16 lg:pt-section pb-8 lg:pb-[50px]">
+      <Container className="flex flex-col gap-12 lg:gap-0 lg:flex-row justify-between">
+        <div className="space-y-6 flex-1 text-center lg:text-left">
           <Image
             src={"/svg/icon-mail.svg"}
             width={32}
             height={28}
             alt="Ícone de email"
+            className="mx-auto lg:mx-0"
           />
-          <div className="space-y-2">
+          <div className="space-y-2 max-w-52 mx-auto lg:mx-0 lg:max-w-full">
             <h6 className="text-neutral-white">
               Fique por dentro das novidades
             </h6>
@@ -67,10 +68,10 @@ export function Footer() {
           </div>
           <Newsletter />
         </div>
-        <div className="flex items-start gap-[164px]">
-          <div>
-            <ul className="space-y-6">
-              {navLinks.map(({ page, link }) => (
+        <div className="flex flex-col lg:flex-row items-start gap-14 lg:gap-[164px]">
+          <div className="mx-auto lg:mx-0">
+            <ul className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-col gap-y-6 gap-x-16">
+              {navFooter.map(({ page, link }) => (
                 <li
                   key={page}
                   className="text-neutral-white hover:brightness-75 transition-all"
@@ -80,19 +81,21 @@ export function Footer() {
               ))}
             </ul>
           </div>
-          <div>
-            <span className="font-semibold text-neutral-white">
+          <div className="mx-auto lg:mx-0">
+            <span className="font-semibold text-center block mx-auto lg:mx-0 text-neutral-white">
               Acompanha nas redes
             </span>
-            <ul className="space-y-4 mt-4">
+            <ul className="lg:space-y-4 mt-4 flex lg:block gap-8 items-center justify-center">
               {socialLinks.map(({ logo, name }) => (
                 <li key={name}>
                   <Link
                     href={"/"}
-                    className="flex-center gap-2 text-neutral-white hover:brightness-75 transition-all"
+                    className="flex-center gap-2 hover:brightness-75 transition-all"
                   >
                     <Image src={logo} width={32} height={32} alt={name} />
-                    {name}
+                    <span className="hidden md:block text-neutral-white">
+                      {name}
+                    </span>
                   </Link>
                 </li>
               ))}

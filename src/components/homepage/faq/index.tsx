@@ -37,22 +37,22 @@ export function FaqSection() {
   }
 
   return (
-    <section className="py-section bg-neutral-gray01">
-      <Container className="flex-between">
-        <div>
-          <div className="space-y-4 max-w-96">
+    <section className="py-16 lg:py-section bg-neutral-gray01">
+      <Container className="flex flex-col gap-12 lg:gap-0 lg:flex-row justify-between">
+        <div className="mx-auto lg:mx-0">
+          <div className="space-y-4 max-w-96 text-center lg:text-left">
             <span className="text-sm font-semibold text-gray-300">
               Tire suas dúvidas
             </span>
             <h4 className="text-gray-800 font-semibold">
               Perguntas mais frequentes
             </h4>
-            <p className="text-xl text-gray-200">
+            <p className="text-base lg:text-xl text-gray-200">
               Separamos algumas perguntas e respostas que podem te ajudar na sua
               decisão
             </p>
           </div>
-          <div className="mt-[60px] space-y-11">
+          <div className="mt-[60px] px-12 lg:px-0 space-y-11">
             <motion.div
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}

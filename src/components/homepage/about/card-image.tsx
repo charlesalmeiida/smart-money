@@ -12,7 +12,7 @@ export function CardImage() {
       transition={{ duration: 0.5, ease: "easeIn" }}
       viewport={{ once: true }}
     >
-      <CardAnimate className="bg-neutral-white absolute w-full bottom-20 -left-52 shadow-card rounded-md max-w-card py-6 pl-6 pr-[15px] space-y-4">
+      <CardAnimate className="bg-neutral-white absolute w-full bottom-0 lg:bottom-20 left-0 md:left-20 lg:-left-52 shadow-card rounded-md max-w-card py-6 pl-6 pr-[15px] space-y-4">
         <div className="flex-between items-start">
           <div>
             <h6 className="font-semibold text-gray-400">R$ 999,90</h6>

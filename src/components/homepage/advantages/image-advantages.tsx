@@ -2,12 +2,12 @@
 
 import Image from "next/image"
 import { TagTech } from "../tag-tech"
-import { TechContainer } from "./advantage-bullet.styles"
 import { motion } from "motion/react"
+import { TechContainer } from "./advantage-bullet.styles"
 
 export function ImageAdvantages() {
   return (
-    <div className="relative flex gap-7">
+    <div className="relative flex">
       <TechContainer className="absolute top-[330px] -left-8">
         <TagTech color="white" />
       </TechContainer>
@@ -16,6 +16,7 @@ export function ImageAdvantages() {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
+        className="mr-7"
       >
         <Image
           src={"/img/image-woman-advantages.png"}

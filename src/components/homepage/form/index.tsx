@@ -14,7 +14,7 @@ export function FormHero() {
   }
 
   return (
-    <div className="py-6 md:pt-10 px-6 md:px-11 max-w-[800px] lg:max-w-full mx-auto lg:mx-0 relative shadow-shape z-50 pb-7 space-y-6 bg-neutral-white rounded-md">
+    <div className="py-6 md:pt-10 px-6 md:px-11 max-w-[800px] lg:max-w-full mx-auto lg:mx-0 relative shadow-shape z-40 pb-7 space-y-6 bg-neutral-white rounded-md">
       <div className="space-y-2">
         <span className="text-sm font-semibold leading-5 text-gray-50">
           Faça parte da revolução digital!

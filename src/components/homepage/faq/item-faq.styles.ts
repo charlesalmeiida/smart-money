@@ -7,14 +7,20 @@ export const IconWrapper = styled.div<{ $isOpen: boolean }>`
 `
 
 export const ButtonFaq = styled.button`
-  width: 43.5rem;
+  width: 100%;
+  max-width: 43.5rem;
   border-radius: 6px;
-  padding: 41px 32px;
+  padding: 24px 16px;
   background-color: ${theme.colors.neutral.white};
   transition: all 0.3s ease;
 
   &:hover {
     background-color: ${theme.colors.neutral.gray01};
+  }
+
+  @media (min-width: 1024px) {
+    padding: 41px 32px;
+    width: 696px;
   }
 `
 
@@ -35,11 +41,17 @@ export const Question = styled.div`
   }
 
   p {
-    font-size: 20px;
+    font-size: 16px;
     color: ${theme.colors.gray[200]};
     text-align: left;
     line-height: 150%;
-    flex-shrink: 0;
+  }
+
+  @media (min-width: 1024px) {
+    p {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
   }
 `
 

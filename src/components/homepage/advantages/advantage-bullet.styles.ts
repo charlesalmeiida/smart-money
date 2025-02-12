@@ -3,7 +3,7 @@ import { theme } from "@/utils/tailwind-theme"
 
 interface AdvantageBulletProps {
   $active: boolean
-  onClick?: () => void
+  onClick?: () => void // Adiciona a prop onClick
 }
 
 export const BulletContainer = styled.button<AdvantageBulletProps>`
@@ -15,13 +15,16 @@ export const BulletContainer = styled.button<AdvantageBulletProps>`
   max-width: 487px;
   text-align: left;
   transition: all 0.3s ease;
+  cursor: pointer;
 
-  &:hover {
-    background-color: ${theme.colors.neutral.white};
+  @media (min-width: 768px) {
+    &:hover {
+      background-color: ${theme.colors.neutral.white};
 
-    h6,
-    p {
-      color: ${theme.colors.gray[500]};
+      h6,
+      p {
+        color: ${theme.colors.gray[500]};
+      }
     }
   }
 
@@ -45,23 +48,23 @@ export const BulletContainer = styled.button<AdvantageBulletProps>`
     border-radius: 6px;
     opacity: ${(props) => (props.$active ? 1 : 0)};
     .progress {
-      animation: progress 6s ease-in-out infinite;
       height: 6px;
       background-color: ${theme.colors.primary.default};
       border-radius: 6px;
-    }
-  }
-
-  @keyframes progress {
-    0% {
       width: 0;
+      animation: progress 6s ease-in-out forwards;
     }
-    100% {
-      width: 100%;
+
+    @keyframes progress {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
     }
   }
 `
-
 export const TechContainer = styled.div`
   animation: floating 6s ease-in-out infinite;
 

@@ -46,8 +46,8 @@ const listItems = [
 
 export function AboutSection() {
   return (
-    <section className="bg-neutral-white relative -mt-10 py-section">
-      <Container className="flex-between items-start">
+    <section className="bg-neutral-white relative -mt-10 pt-section pb-16 lg:pb-section">
+      <Container className="flex flex-col lg:flex-row justify-between items-center text-center lg:text-left lg:items-start">
         <div>
           <div className="space-y-12">
             <div className="space-y-10">
@@ -55,13 +55,13 @@ export function AboutSection() {
                 <h4 className="max-w-[423px] font-semibold text-gray-800">
                   Conheça nossas solução customizadas
                 </h4>
-                <p className="max-w-[436px] text-gray-300 text-lg leading-7">
+                <p className="lg:max-w-[436px] text-base lg:text-lg mx-auto lg:mx-0 text-gray-300 max-w-96 leading-7">
                   Suscipit pellentesque praesent auctor molestie massa nunc
                   vitae felis eget est ut gravida in maecenas. Tempus in in in
                   congue proin.
                 </p>
               </div>
-              <ul className="space-y-6">
+              <ul className="space-y-6 w-fit mx-auto lg:mx-0">
                 {bulletsAbout.map(({ text }) => (
                   <li key={text} className="flex-center gap-4">
                     <Image
@@ -70,7 +70,7 @@ export function AboutSection() {
                       width={24}
                       height={24}
                     />
-                    <span className="text-sabe leading-6 text-gray-200">
+                    <span className="text-base text-left leading-6 text-gray-200">
                       {text}
                     </span>
                   </li>
@@ -81,7 +81,7 @@ export function AboutSection() {
               Quero ser cliente
             </Button>
           </div>
-          <button className="flex-center gap-3 mt-8">
+          <button className="flex-center mx-auto lg:mx-0 my-10 gap-3 mt-8">
             <Image
               src={"/svg/icon-tel.svg"}
               width={13}
@@ -91,18 +91,27 @@ export function AboutSection() {
             <span className="text-gray-500">Fale conosco</span>
           </button>
         </div>
-        <div className="relative">
+        <Image
+          src={"/img/image-about-mobile.png"}
+          width={327}
+          height={300}
+          alt="Imagem da seção sobre"
+          quality={100}
+          className="md:hidden w-full"
+        />
+        <div className="relative hidden w-full lg:w-fit md:flex items-end justify-end">
+          <div></div>
+          <CardImage />
           <Image
             src={"/img/image-woman-about.png"}
             alt="Imagem de mulher no celular na seção de sobre"
             width={488}
             height={640}
           />
-          <CardImage />
           <CirclesAnimation />
         </div>
       </Container>
-      <Container className="flex-between pt-section">
+      <Container className="flex flex-col lg:flex-row text-center items-center justify-between lg:text-left gap-14 lg:gap-0 pt-16 lg:pt-section">
         {listItems.map(({ image, title, description }, index) => (
           <ListItem
             key={index}

@@ -23,7 +23,7 @@ export function BannerText({
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="flex-total-center space-y-8 flex-col max-w-banner"
+      className="flex-total-center space-y-8 flex-col max-w-banner mx-auto lg:mx-0"
     >
       <Image
         src={type === "sale" ? "/svg/icon-money.svg" : "/svg/icon-chat.svg"}
@@ -35,7 +35,7 @@ export function BannerText({
         <h5 className="max-w-banner text-gray-800 font-semibold mb-2">
           {title}
         </h5>
-        <p>{description}</p>
+        <p className="max-w-72 lg:max-w-full mx-auto lg:mx-0">{description}</p>
       </div>
       <Button color={button} size="md">
         {type === "sale" ? "Quero ser cliente" : "Fale conosco"}

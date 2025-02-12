@@ -9,11 +9,11 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      {/* <AboutSection /> */}
-      {/* <BlogSection /> */}
-      {/* <AdvantagesSection /> */}
-      {/* <BannersSection /> */}
-      {/* <FaqSection /> */}
+      <AboutSection />
+      <BlogSection />
+      <AdvantagesSection />
+      <BannersSection />
+      <FaqSection />
     </>
   )
 }
