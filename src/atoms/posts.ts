@@ -1,50 +1,5 @@
+import { Post } from "@/types/post-blog"
 import { atom } from "jotai"
-
-export type Post = {
-  id: number
-  title: {
-    rendered: string
-  }
-  date: string
-  slug: string
-  content: {
-    rendered: string
-  }
-  excerpt: {
-    rendered: string
-  }
-  _embedded: {
-    "wp:featuredmedia": Array<{
-      media_details: {
-        sizes: {
-          large: {
-            source_url: string
-          }
-        }
-      }
-    }>
-    author: Array<{
-      name: string
-    }>
-  }
-}
-
-export const formatDate = (date: string) => {
-  const options: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "long",
-  }
-  const formattedDate = new Date(date).toLocaleDateString("pt-BR", options)
-  return formattedDate
-    .split(" ")
-    .map((word, index) => {
-      if (index === 0) {
-        return word.charAt(0).toUpperCase() + word.slice(1)
-      }
-      return word
-    })
-    .join(" ")
-}
 
 export const postsAtom = atom<Post[]>([])
 

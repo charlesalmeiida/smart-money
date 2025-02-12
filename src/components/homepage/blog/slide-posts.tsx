@@ -9,7 +9,9 @@ import { CardBlog } from "./card-blog"
 import Image from "next/image"
 import { ContainerPagination } from "./slide.styles"
 import { useAtomValue, useAtom } from "jotai"
-import { Post, postsAtom, fetchPostsAtom, formatDate } from "@/atoms/posts"
+import { postsAtom, fetchPostsAtom } from "@/atoms/posts"
+import { formatDate } from "@/utils/format-date"
+import { Post } from "@/types/post-blog"
 
 export function SlidePosts() {
   const posts = useAtomValue(postsAtom)

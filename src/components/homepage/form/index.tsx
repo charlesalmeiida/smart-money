@@ -23,7 +23,7 @@ export function FormHero() {
           Cadastre-se e faça parte do lançamento oficial
         </h6>
       </div>
-      <form className="w-full max-w-[400px] space-y-6">
+      <form className="w-full max-w-form space-y-6">
         <fieldset className="flex-center gap-8">
           <InputRadio getCategory={getCategory} checked category="person">
             Para você

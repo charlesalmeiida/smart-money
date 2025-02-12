@@ -68,6 +68,9 @@ export default {
         card: "17.375rem",
         banner: "25.5rem",
         newsletter: "30.375rem",
+        buttonMd: "18.9375rem",
+        heading: "41rem",
+        form: "25rem",
       },
       margin: {
         section: "7.5rem",
@@ -77,6 +80,9 @@ export default {
       },
       borderWidth: {
         button: "0.0938rem",
+      },
+      gap: {
+        breadcrumb: "9.75rem",
       },
     },
   },

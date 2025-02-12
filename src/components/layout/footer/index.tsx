@@ -3,48 +3,8 @@ import { Newsletter } from "./newsletter"
 import Image from "next/image"
 import Link from "next/link"
 import { Copyright } from "./copyright"
-
-const navFooter = [
-  {
-    page: "Quero ser cliente",
-    link: "/",
-  },
-  {
-    page: "Acessar conta",
-    link: "/",
-  },
-  {
-    page: "Dúvidas",
-    link: "/",
-  },
-  {
-    page: "Termos e condições",
-    link: "/",
-  },
-  {
-    page: "Fale conosco",
-    link: "/",
-  },
-]
-
-const socialLinks = [
-  {
-    logo: "/svg/icon-twitter.svg",
-    name: "Twitter",
-  },
-  {
-    logo: "/svg/icon-linkedin.svg",
-    name: "Linkedin",
-  },
-  {
-    logo: "/svg/icon-instagram.svg",
-    name: "Instagram",
-  },
-  {
-    logo: "/svg/icon-facebook.svg",
-    name: "Facebook",
-  },
-]
+import { navFooter } from "@/constants/nav-footer"
+import { socialLinks } from "@/constants/social-links"
 
 export function Footer() {
   return (

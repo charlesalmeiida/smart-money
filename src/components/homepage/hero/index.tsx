@@ -14,7 +14,7 @@ export function HeroSection() {
           <div className="space-y-14 mt-9 text-center lg:text-left">
             <div>
               <TagTech />
-              <h3 className="text-neutral-white mx-auto lg:mx-0 mt-6 font-semibold max-w-[656px]">
+              <h3 className="text-neutral-white mx-auto lg:mx-0 mt-6 font-semibold max-w-heading">
                 Conta digital que não é só uma conta digital.
               </h3>
               <p className="text-neutral-white max-w-80 lg:max-w-full mx-auto lg:mx-0 text-base mt-3 lg:text-lg">

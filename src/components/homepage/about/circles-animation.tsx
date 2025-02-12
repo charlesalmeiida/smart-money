@@ -2,21 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "motion/react"
-
-const circles = [
-  {
-    image: "/svg/circles/01.svg",
-  },
-  {
-    image: "/svg/circles/02.svg",
-  },
-  {
-    image: "/svg/circles/03.svg",
-  },
-  {
-    image: "/svg/circles/04.svg",
-  },
-]
+import { circles } from "@/constants/circles"
 
 export function CirclesAnimation() {
   return (

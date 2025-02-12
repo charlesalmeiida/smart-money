@@ -12,7 +12,7 @@ const button = tv({
     },
     size: {
       sm: "py-3 px-6 text-sm",
-      md: "py-4 w-full max-w-[303px] mx-auto lg:mx-0 lg:max-w-button text-base",
+      md: "py-4 w-full max-w-buttonMd mx-auto lg:mx-0 lg:max-w-button text-base",
       lg: "py-4 w-full text-base",
     },
   },
