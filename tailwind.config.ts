@@ -18,6 +18,7 @@ export default {
       hero: "url('/svg/bg-hero.svg')",
       footer: "url('/svg/bg-footer.svg')",
       vantagens: "url('/svg/bg-vantagens.svg')",
+      mobile: "url('/svg/bg-mobile.svg')",
     },
     boxShadow: {
       shape: "0px 30px 50px -10px rgba(76, 74, 94, 0.20)",

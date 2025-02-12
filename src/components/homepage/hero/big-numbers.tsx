@@ -1,14 +1,17 @@
-import { motion, useMotionValue, useTransform, animate } from "motion/react"
+import { motion, useMotionValue, useTransform, animate } from "framer-motion"
 import React, { useEffect } from "react"
 
 interface BigNumbersProps {
   children: React.ReactNode
   value: number
+  suffix?: string
 }
 
-export function BigNumbers({ children, value }: BigNumbersProps) {
-  const count = useMotionValue(0) // Valor inicial da contagem
-  const rounded = useTransform(count, (latest) => Math.round(latest)) // Arredonda o valor
+export function BigNumbers({ children, value, suffix = "" }: BigNumbersProps) {
+  const count = useMotionValue(0)
+  const rounded = useTransform(count, (latest) => Math.round(latest))
+
+  const formattedValue = useTransform(rounded, (latest) => `${latest}${suffix}`)
 
   useEffect(() => {
     const controls = animate(count, value, {
@@ -21,7 +24,7 @@ export function BigNumbers({ children, value }: BigNumbersProps) {
 
   return (
     <div className="text-neutral-white space-y-[6px]">
-      <motion.h4 className="font-semibold">{rounded}</motion.h4>
+      <motion.h4 className="font-semibold">{formattedValue}</motion.h4>
       <motion.span className="font-sans block text-base leading-6">
         {children}
       </motion.span>

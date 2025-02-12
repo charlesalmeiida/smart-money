@@ -32,8 +32,10 @@ export function Header({ isBlog = false }: HeaderProps) {
       : "absolute"
 
   return (
-    <header className={`${bgClass} w-full top-0 transition-all z-50`}>
-      <Container className="flex-between px-8 md:px-0 py-7 md:py-7 items-center">
+    <header
+      className={`${bgClass} w-full px-6 md:px-0 py-7 md:py-7 top-0 transition-all z-50`}
+    >
+      <Container className="flex-between items-center">
         <Link href={"/"}>
           <div className="w-40 h-6 md:w-[231px] md:h-[36px] relative">
             <Image

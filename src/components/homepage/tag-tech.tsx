@@ -12,7 +12,7 @@ export function TagTech({ color }: TagTechProps) {
 
   return (
     <div
-      className={`flex-center gap-2 pl-4 pr-5 py-[10px] rounded-full w-fit border-2 ${bg}`}
+      className={`flex-center gap-2 pl-4 mx-auto lg:mx-0 pr-5 py-[10px] rounded-full w-fit border-2 ${bg}`}
     >
       <Image
         src={"/svg/icon-star.svg"}

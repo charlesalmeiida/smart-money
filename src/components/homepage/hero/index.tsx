@@ -9,20 +9,20 @@ import { motion } from "motion/react"
 export function HeroSection() {
   return (
     <main>
-      <section className="pt-[136px] bg-hero relative bg-center bg-no-repeat bg-cover">
-        <Container className="flex flex-col md:flex-row justify-between">
+      <section className="pt-[136px] bg-mobile md:bg-hero relative bg-bottom bg-no-repeat bg-cover">
+        <Container className="flex flex-col lg:flex-row gap-16 lg:gap-0 justify-between">
           <div className="space-y-14 mt-9 text-center lg:text-left">
             <div>
               <TagTech />
-              <h3 className="text-neutral-white mt-6 font-semibold max-w-[656px]">
+              <h3 className="text-neutral-white mx-auto lg:mx-0 mt-6 font-semibold max-w-[656px]">
                 Conta digital que não é só uma conta digital.
               </h3>
-              <p className="text-neutral-white mt-3 text-lg">
+              <p className="text-neutral-white max-w-80 lg:max-w-full mx-auto lg:mx-0 text-base mt-3 lg:text-lg">
                 Pellentesque rutrum turpis non est turpis pretium morbi urna.
               </p>
             </div>
-            <div className="w-8 h-[2px] bg-primary-default"></div>
-            <div className="flex-center gap-16">
+            <div className="w-8 h-[2px] mx-auto lg:mx-0 bg-primary-default"></div>
+            <div className="flex flex-col lg:flex-row gap-16">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -45,7 +45,9 @@ export function HeroSection() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <BigNumbers value={15}>Faturamento 2021</BigNumbers>
+                <BigNumbers value={15} suffix="mi">
+                  Faturamento 2021
+                </BigNumbers>
               </motion.div>
             </div>
           </div>
