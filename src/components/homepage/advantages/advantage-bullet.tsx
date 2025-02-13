@@ -7,12 +7,16 @@ interface AdvantageBulletProps {
   $active: boolean
   onClick?: () => void
   onAnimationEnd?: () => void
+  title: string
+  subtitle: string
 }
 
 export function AdvantageBullet({
   $active,
   onClick,
   onAnimationEnd,
+  title,
+  subtitle,
 }: AdvantageBulletProps) {
   const progressRef = useRef<HTMLDivElement>(null)
 
@@ -21,7 +25,7 @@ export function AdvantageBullet({
 
     const handleAnimationEnd = () => {
       if (onAnimationEnd) {
-        onAnimationEnd() // Chama o callback quando a animação terminar
+        onAnimationEnd()
       }
     }
 
@@ -38,15 +42,12 @@ export function AdvantageBullet({
 
   return (
     <BulletContainer $active={$active} onClick={onClick}>
-      <h6>Tecnologia de ponta</h6>
-      <p>
-        Nullam neque, rutrum et enim diam, ligula fringilla aliquet tincidunt
-        ullamcorper elit
-      </p>
+      <h6>{title}</h6>
+      <p>{subtitle}</p>
 
       <div className="loader">
         <div
-          key={$active ? "active" : "inactive"} // Reinicia a animação quando $active muda
+          key={$active ? "active" : "inactive"} 
           ref={progressRef}
           className="progress"
         ></div>

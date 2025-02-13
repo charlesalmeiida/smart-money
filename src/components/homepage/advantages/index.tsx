@@ -6,6 +6,7 @@ import { Container } from "@/components/container"
 import { AdvantageBullet } from "./advantage-bullet"
 import { ImageAdvantages } from "./image-advantages"
 import Image from "next/image"
+import { bulletsData } from "@/constants/advantages-content"
 
 export function AdvantagesSection() {
   const [activeBullets, setActiveBullets] = useState([true, false, false])
@@ -40,10 +41,12 @@ export function AdvantagesSection() {
               03 vantagens exclusivas da SmartMoney
             </h4>
             <div className="flex flex-col items-center lg:items-start lg:gap-6">
-              {activeBullets.map((active, index) => (
+              {bulletsData.map(({ title, subtitle }, index) => (
                 <AdvantageBullet
                   key={index}
-                  $active={active}
+                  $active={activeBullets[index]}
+                  title={title}
+                  subtitle={subtitle}
                   onClick={() => handleBulletClick(index)}
                   onAnimationEnd={() => handleAnimationEnd(index)}
                 />
