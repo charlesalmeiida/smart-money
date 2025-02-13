@@ -26,15 +26,13 @@ export function Header({ isBlog = false }: HeaderProps) {
 
   const bgClass =
     isBlog === true
-      ? "bg-gray-700"
+      ? "bg-gray-700 py-7 md:py-7"
       : isScrolled
-      ? "sticky bg-neutral-white shadow-header slide"
-      : "absolute"
+        ? "sticky bg-neutral-white shadow-header slide py-4"
+        : "absolute py-7 md:py-7"
 
   return (
-    <header
-      className={`${bgClass} w-full md:px-0 py-7 md:py-7 top-0 transition-all z-50`}
-    >
+    <header className={`${bgClass} w-full md:px-0 top-0 transition-all z-50`}>
       <Container className="flex-between items-center">
         <Link href={"/"}>
           <div className="w-40 h-6 md:w-[231px] md:h-[36px] relative">
