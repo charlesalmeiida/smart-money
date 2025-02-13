@@ -6,6 +6,7 @@ import { BlogSection } from "@/components/homepage/blog"
 import { AdvantagesSection } from "@/components/homepage/advantages"
 
 import { client } from "@/sanity/lib/client"
+import { Homepage } from "@/types/post-blog"
 
 export default async function Home() {
   const query = `*[_type == "homepage"][0]{
@@ -14,7 +15,8 @@ export default async function Home() {
     form, 
     buttonCta
   }`
-  const { title, subtitle, buttonCta, form } = await client.fetch(query)
+  const { title, subtitle, buttonCta, form }: Homepage =
+    await client.fetch(query)
 
   return (
     <>

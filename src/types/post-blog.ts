@@ -26,3 +26,10 @@ export type Post = {
     }>
   }
 }
+
+export type Homepage = {
+  title: string
+  subtitle: string
+  form: string
+  buttonCta: string
+}
