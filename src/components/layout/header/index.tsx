@@ -7,6 +7,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import Hamburger from "hamburger-react"
 import { navLinks } from "@/constants/nav-links"
+import { useAnimate } from "motion/react"
 
 interface HeaderProps {
   isBlog?: boolean
@@ -14,6 +15,7 @@ interface HeaderProps {
 
 export function Header({ isBlog = false }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [scope, animate] = useAnimate()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,8 +23,17 @@ export function Header({ isBlog = false }: HeaderProps) {
     }
 
     window.addEventListener("scroll", handleScroll)
+
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  useEffect(() => {
+    animate(
+      scope.current,
+      { y: isScrolled ? [-50, 0] : 0, scale: isScrolled ? [0.9, 1] : 1 },
+      { duration: 0.5, ease: "easeIn" }
+    )
+  })
 
   const bgClass =
     isBlog === true
@@ -32,7 +43,10 @@ export function Header({ isBlog = false }: HeaderProps) {
         : "absolute py-7 md:py-7"
 
   return (
-    <header className={`${bgClass} w-full md:px-0 top-0 transition-all z-50`}>
+    <header
+      ref={scope}
+      className={`${bgClass} w-full md:px-0 top-0 transition-all z-50`}
+    >
       <Container className="flex-between items-center">
         <Link href={"/"}>
           <div className="w-40 h-6 md:w-[231px] md:h-[36px] relative">
