@@ -16,7 +16,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 <br>
 
-<strong>PS: Escolhi iniciar o projeto com Tailwind para garantir a entrega dentro do prazo, pois tenho mais produtividade com essa lib. Mas construi alguns componentes com Styled-components e também tenho familiriade com a ferramenta. Posso fazer uma migração completa para Styled, caso haja a necessidade. </strong>
+<strong>PS: Escolhi iniciar o projeto com Tailwind para garantir a entrega dentro do prazo, pois tenho mais produtividade com essa lib. Mas construi alguns componentes com Styled-components e também tenho familiaridade com a ferramenta. Posso fazer uma migração completa para Styled, caso haja a necessidade. </strong>
 
 ## 📂 Como Clonar Este Repositório
 
